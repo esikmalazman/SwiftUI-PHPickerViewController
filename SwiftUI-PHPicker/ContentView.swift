@@ -8,12 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var image : Image = Image(systemName: "photo.artframe")
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Spacer()
+            
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity, maxHeight:150)
+            
+            Spacer()
+            
+            Button {
+                
+            } label: {
+                Label("Photo Library", image: "")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            
         }
         .padding()
     }
